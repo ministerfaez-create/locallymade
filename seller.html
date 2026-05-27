@@ -1,4 +1,186 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LocallyMade</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #000000, #1a1a1a, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      overflow-y: auto;
+      color: white;
+    }
+
+    .shine {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: move 10s infinite alternate ease-in-out;
+    }
+
+    .shine2 {
+      top: -100px;
+      left: -100px;
+    }
+
+    .shine3 {
+      bottom: -100px;
+      right: -100px;
+    }
+
+    @keyframes move {
+      from {
+        transform: translateY(0px) translateX(0px);
+      }
+      to {
+        transform: translateY(40px) translateX(40px);
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 40px;
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+
+    .logo {
+      font-size: 55px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: white;
+      text-shadow: 0 0 15px rgba(255,255,255,0.5);
+      margin-bottom: 10px;
+    }
+
+    .slogan {
+      font-size: 20px;
+      color: #e0e0e0;
+      margin-bottom: 50px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 18px 35px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+      min-width: 220px;
+    }
+
+    .seller {
+      background: white;
+      color: black;
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    }
+
+    .seller:hover {
+      transform: scale(1.05);
+      background: #e6e6e6;
+    }
+
+    .browse {
+      background: black;
+      color: white;
+      border: 2px solid white;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .browse:hover {
+      transform: scale(1.05);
+      background: #1a1a1a;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        font-size: 40px;
+      }
+
+      .slogan {
+        font-size: 16px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div style="position:absolute; top:25px; left:30px; font-size:28px; font-weight:bold; letter-spacing:2px; color:white; text-shadow:0 0 10px rgba(255,255,255,0.4); z-index:10;">
+    LOCALLYMADE
+  </div>
+
+  <div class="shine shine2"></div>
+  <div class="shine shine3"></div>
+
+  <div class="container">
+    <div class="logo">LOCALLYMADE</div>
+
+    <div class="slogan">
+      Discover South African brands. Sell local. Support local.
+    </div>
+
+    
+
+    <div class="footer">
+      Seller Subscription: R150 per month
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('sellerForm');
+    const agreeBox = document.getElementById('agreeBox');
+
+    form.addEventListener('submit', function(e) {
+      
+
+      if (!agreeBox.checked) {
+        e.preventDefault();
+        alert('Please tick the agreement box before continuing.');
+      }
+    });
+ <script>
   const sellerForm = document.getElementById('sellerForm');
   const agreeBox = document.getElementById('agreeBox');
   const paymentSection = document.getElementById('paymentSection');
@@ -19,3 +201,258 @@
     paymentSection.scrollIntoView({ behavior: 'smooth' });
   });
 </script>
+
+</body>
+</html>
+
+<!-- ========================================= -->
+<!-- SAVE THIS AS seller.html -->
+<!-- ========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Become a Seller - LocallyMade</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #000000, #1a1a1a, #ffffff);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      color: white;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 700px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 45px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.4);
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #dddddd;
+      margin-bottom: 35px;
+      font-size: 18px;
+    }
+
+    .price-box {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 20px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .price {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .features {
+      margin-bottom: 35px;
+      line-height: 2;
+      color: #f0f0f0;
+    }
+
+    .features p {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 10px 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    input {
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      background: rgba(255,255,255,0.12);
+      color: white;
+    }
+
+    input::placeholder {
+      color: #cccccc;
+    }
+
+    button {
+      padding: 18px;
+      border: none;
+      border-radius: 50px;
+      background: white;
+      color: black;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.03);
+      background: #e5e5e5;
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 25px;
+      color: white;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .card {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Become a Seller</h1>
+
+    <div class="subtitle">
+      Start selling your products on LocallyMade.
+    </div>
+
+    <div class="price-box">
+      <h2 style="margin-bottom:15px;">Seller Subscription</h2>
+      <div class="price">R150 / Month</div>
+      <p>One simple subscription for all sellers.</p>
+
+      <div id="paymentSection" style="display:none; margin-top:25px; background:rgba(255,255,255,0.08); padding:25px; border-radius:20px; text-align:left;">
+
+        <h3 style="margin-bottom:20px; text-align:center;">Complete Seller Payment</h3>
+
+        <label style="display:block; margin-bottom:10px;">Choose Payment Method</label>
+
+        <select style="width:100%; padding:15px; border:none; border-radius:12px; margin-bottom:18px; background:rgba(255,255,255,0.12); color:white; font-size:16px;">
+          <option>PayFast</option>
+          <option>Yoco</option>
+        </select>
+
+        <input type="text" placeholder="Card Holder Name" style="width:100%; padding:15px; border:none; border-radius:12px; margin-bottom:15px; background:rgba(255,255,255,0.12); color:white; font-size:16px;">
+
+        <input type="text" placeholder="Card Number" style="width:100%; padding:15px; border:none; border-radius:12px; margin-bottom:15px; background:rgba(255,255,255,0.12); color:white; font-size:16px;">
+
+        <div style="display:flex; gap:15px; flex-wrap:wrap;">
+          <input type="text" placeholder="Expiry Date" style="flex:1; padding:15px; border:none; border-radius:12px; margin-bottom:15px; background:rgba(255,255,255,0.12); color:white; font-size:16px; min-width:120px;">
+
+          <input type="text" placeholder="CVV" style="flex:1; padding:15px; border:none; border-radius:12px; margin-bottom:15px; background:rgba(255,255,255,0.12); color:white; font-size:16px; min-width:120px;">
+        </div>
+
+        <button type="button" style="width:100%; margin-top:10px;">
+          Pay R150 Subscription
+        </button>
+
+        <p style="margin-top:18px; font-size:14px; color:#dddddd; text-align:center;">
+          Complete payment before seller approval.
+        </p>
+
+      </div>
+    </div>
+
+    <div class="features">
+      <p>✔ Sell your products online</p>
+      <p>✔ Reach customers across South Africa</p>
+      <p>✔ Promote your local brand</p>
+      <p>✔ Upload product images and prices</p>
+      <p>✔ Grow your business with LocallyMade</p>
+    </div>
+
+    <div style="max-height: 180px; overflow-y: auto; background: rgba(255,255,255,0.08); padding: 20px; border-radius: 15px; margin-bottom: 25px; line-height: 1.8; color: #f0f0f0;">
+      <h3 style="margin-bottom: 15px;">Seller Instructions</h3>
+
+      <p>• Sellers must pay a monthly subscription of R150.</p>
+      <p>• Sellers must upload real products only.</p>
+      <p>• Fake products and scams are not allowed.</p>
+      <p>• Sellers are responsible for their own deliveries and customer communication.</p>
+      <p>• Respect all customers and provide honest information.</p>
+      <p>• LocallyMade may remove sellers who break the rules.</p>
+      <p>• By joining, you agree to follow all marketplace policies.</p>
+      <p>• Keep your products and prices updated.</p>
+      <p>• Products must support local South African businesses and brands.</p>
+    </div>
+
+    <form id="sellerForm">
+      <input type="text" placeholder="Brand Name" required>
+
+      <input type="text" placeholder="Owner Full Name" required>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+        <input type="email" id="sellerEmail" placeholder="Email Address" required style="flex:1; min-width:220px;">
+
+        <button type="button" id="verifyBtn" style="min-width:180px;">
+          Verify Email
+        </button>
+      </div>
+
+      <div id="verificationBox" style="display:none; background:rgba(255,255,255,0.08); padding:18px; border-radius:15px;">
+        <p style="margin-bottom:12px; color:#dddddd;">
+          After payment, verify your email to complete seller setup.
+        </p>
+
+        <input type="text" id="verificationCode" placeholder="Enter Verification Code">
+
+        <button type="button" id="confirmCodeBtn" style="margin-top:15px; width:100%;">
+          Confirm Verification
+        </button>
+      </div>
+
+      <p id="verifiedMessage" style="display:none; color:#9cffb0; text-align:center; font-weight:bold;">
+        ✔ Email Successfully Verified
+      </p>
+
+      <input type="tel" placeholder="Phone Number" required>
+
+      <label style="display:flex; align-items:flex-start; gap:12px; font-size:15px; line-height:1.5; color:#f0f0f0;">
+        <input type="checkbox" id="agreeBox" style="width:20px; height:20px; margin-top:3px; cursor:pointer;">
+        I read all the instructions and understand them, will abide by them.
+      </label>
+
+      <button type="submit">Continue</button>
+
+      <p id="continueMessage" style="display:none; text-align:center; color:#dddddd; margin-top:10px;">
+        Please complete your payment below.
+      </p>
+    </form>
+
+    <a href="index.html" class="back">← Back to Home</a>
+  </div>
+
+</body>
+</html>
