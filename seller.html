@@ -180,6 +180,29 @@
     });
   </script>
 
+  <script>
+    const sellerForm = document.getElementById('sellerForm');
+    const agreeBox = document.getElementById('agreeBox');
+    const paymentSection = document.getElementById('paymentSection');
+    const continueMessage = document.getElementById('continueMessage');
+
+    sellerForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      if (!agreeBox.checked) {
+        alert('Please tick the agreement box before continuing.');
+        return;
+      }
+
+      paymentSection.style.display = 'block';
+      continueMessage.style.display = 'block';
+
+      paymentSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
 </body>
 </html>
 
@@ -328,8 +351,40 @@
     </div>
 
     <div class="price-box">
+      <h2 style="margin-bottom:15px;">Seller Subscription</h2>
       <div class="price">R150 / Month</div>
       <p>One simple subscription for all sellers.</p>
+
+      <div id="paymentSection" style="display:none; margin-top:25px; background:rgba(255,255,255,0.08); padding:25px; border-radius:20px; text-align:left;">
+
+        <h3 style="margin-bottom:20px; text-align:center;">Complete Seller Payment</h3>
+
+        <label style="display:block; margin-bottom:10px;">Choose Payment Method</label>
+
+        <select style="width:100%; padding:15px; border:none; border-radius:12px; margin-bottom:18px; background:rgba(255,255,255,0.12); color:white; font-size:16px;">
+          <option>PayFast</option>
+          <option>Yoco</option>
+        </select>
+
+        <input type="text" placeholder="Card Holder Name" style="width:100%; padding:15px; border:none; border-radius:12px; margin-bottom:15px; background:rgba(255,255,255,0.12); color:white; font-size:16px;">
+
+        <input type="text" placeholder="Card Number" style="width:100%; padding:15px; border:none; border-radius:12px; margin-bottom:15px; background:rgba(255,255,255,0.12); color:white; font-size:16px;">
+
+        <div style="display:flex; gap:15px; flex-wrap:wrap;">
+          <input type="text" placeholder="Expiry Date" style="flex:1; padding:15px; border:none; border-radius:12px; margin-bottom:15px; background:rgba(255,255,255,0.12); color:white; font-size:16px; min-width:120px;">
+
+          <input type="text" placeholder="CVV" style="flex:1; padding:15px; border:none; border-radius:12px; margin-bottom:15px; background:rgba(255,255,255,0.12); color:white; font-size:16px; min-width:120px;">
+        </div>
+
+        <button type="button" style="width:100%; margin-top:10px;">
+          Pay R150 Subscription
+        </button>
+
+        <p style="margin-top:18px; font-size:14px; color:#dddddd; text-align:center;">
+          Complete payment before seller approval.
+        </p>
+
+      </div>
     </div>
 
     <div class="features">
@@ -369,6 +424,10 @@
       </label>
 
       <button type="submit">Continue</button>
+
+      <p id="continueMessage" style="display:none; text-align:center; color:#dddddd; margin-top:10px;">
+        Please complete your payment below.
+      </p>
     </form>
 
     <a href="index.html" class="back">← Back to Home</a>
