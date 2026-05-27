@@ -166,5 +166,30 @@ nav a{
 nav a:hover{
   opacity:0.7;
 }
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
 
+.hero-buttons a{
+  padding:15px 30px;
+  text-decoration:none;
+  border-radius:5px;
+  font-size:16px;
+  font-weight:bold;
+}
+
+.seller-btn{
+  background:black;
+  color:white;
+}
+
+.browse-btn{
+  background:white;
+  color:black;
+  border:2px solid black;
+}s
 
