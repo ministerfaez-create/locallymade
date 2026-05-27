@@ -178,22 +178,35 @@
 
     <div class="payment" id="paymentSection">
 
-      <h3>Payment</h3>
-      <p>Choose payment method</p>
+  <h3>Complete Payment</h3>
+  <p style="margin-bottom:10px; color:#ddd;">
+    Choose a secure payment method to activate your seller account.
+  </p>
 
-      <select>
-        <option>PayFast</option>
-        <option>Yoco</option>
-      </select>
+  <!-- PAYFAST -->
+  <form action="https://www.payfast.co.za/eng/process" method="post" style="margin-bottom:20px;">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="150">
+    <input type="hidden" name="item_name" value="LocallyMade Seller Subscription">
 
-      <button>Pay R150 Subscription</button>
+    <button type="submit"
+      style="width:100%; padding:16px; border:none; border-radius:50px; background:white; color:black; font-weight:bold;">
+      Pay R150 with PayFast
+    </button>
+  </form>
 
-      <p style="margin-top:10px; font-size:12px; color:#ddd;">
-        Complete payment to activate seller account
-      </p>
+  <!-- YOCO -->
+  <a href="https://www.yoco.com" target="_blank"
+     style="display:block; text-align:center; padding:16px; border-radius:50px; border:2px solid white; color:white; text-decoration:none; font-weight:bold;">
+    Pay with Yoco
+  </a>
 
-    </div>
+  <p style="margin-top:15px; font-size:12px; color:#ccc; text-align:center;">
+    You will be redirected to a secure payment gateway.
+  </p>
 
+</div>
   </div>
 
 <script>
