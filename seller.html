@@ -146,6 +146,10 @@
 </head>
 <body>
 
+  <div style="position:absolute; top:25px; left:30px; font-size:28px; font-weight:bold; letter-spacing:2px; color:white; text-shadow:0 0 10px rgba(255,255,255,0.4); z-index:10;">
+    LOCALLYMADE
+  </div>
+
   <div class="shine shine2"></div>
   <div class="shine shine3"></div>
 
@@ -166,6 +170,18 @@
       Seller Subscription: R150 per month
     </div>
   </div>
+
+  <script>
+    const form = document.getElementById('sellerForm');
+    const agreeBox = document.getElementById('agreeBox');
+
+    form.addEventListener('submit', function(e) {
+      if (!agreeBox.checked) {
+        e.preventDefault();
+        alert('Please tick the agreement box before continuing.');
+      }
+    });
+  </script>
 
 </body>
 </html>
@@ -327,7 +343,21 @@
       <p>✔ Grow your business with LocallyMade</p>
     </div>
 
-    <form>
+    <div style="max-height: 180px; overflow-y: auto; background: rgba(255,255,255,0.08); padding: 20px; border-radius: 15px; margin-bottom: 25px; line-height: 1.8; color: #f0f0f0;">
+      <h3 style="margin-bottom: 15px;">Seller Instructions</h3>
+
+      <p>• Sellers must pay a monthly subscription of R150.</p>
+      <p>• Sellers must upload real products only.</p>
+      <p>• Fake products and scams are not allowed.</p>
+      <p>• Sellers are responsible for their own deliveries and customer communication.</p>
+      <p>• Respect all customers and provide honest information.</p>
+      <p>• LocallyMade may remove sellers who break the rules.</p>
+      <p>• By joining, you agree to follow all marketplace policies.</p>
+      <p>• Keep your products and prices updated.</p>
+      <p>• Products must support local South African businesses and brands.</p>
+    </div>
+
+    <form id="sellerForm">
       <input type="text" placeholder="Brand Name" required>
 
       <input type="text" placeholder="Owner Full Name" required>
@@ -336,7 +366,12 @@
 
       <input type="tel" placeholder="Phone Number" required>
 
-      <button type="submit">Apply to Become a Seller</button>
+      <label style="display:flex; align-items:flex-start; gap:12px; font-size:15px; line-height:1.5; color:#f0f0f0;">
+        <input type="checkbox" id="agreeBox" style="width:20px; height:20px; margin-top:3px; cursor:pointer;">
+        I read all the instructions and understand them, will abide by them.
+      </label>
+
+      <button type="submit">Continue</button>
     </form>
 
     <a href="index.html" class="back">← Back to Home</a>
