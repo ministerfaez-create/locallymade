@@ -168,40 +168,51 @@
     </div>
   </div>
 
-  <script>
-    const form = document.getElementById('sellerForm');
-    const agreeBox = document.getElementById('agreeBox');
-
-    form.addEventListener('submit', function(e) {
-      
-
-      if (!agreeBox.checked) {
-        e.preventDefault();
-        alert('Please tick the agreement box before continuing.');
-      }
-    });
  <script>
-  const sellerForm = document.getElementById('sellerForm');
-  const agreeBox = document.getElementById('agreeBox');
-  const paymentSection = document.getElementById('paymentSection');
+  const sellerForm = document.getElementById("sellerForm");
+  const agreeBox = document.getElementById("agreeBox");
+  const paymentSection = document.getElementById("paymentSection");
 
-  sellerForm.addEventListener('submit', function(e) {
+  sellerForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Step 1: must agree
+    // check checkbox first
     if (!agreeBox.checked) {
-      alert('Please tick the agreement box before continuing.');
+      alert("You must agree to the instructions before continuing.");
       return;
     }
 
-    // Step 2: show payment section
-    paymentSection.style.display = 'block';
+    // show payment section
+    paymentSection.style.display = "block";
 
-    // Step 3: scroll to payment
-    paymentSection.scrollIntoView({ behavior: 'smooth' });
+    // smooth scroll
+    paymentSection.scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+   <script>
+  const sellerForm = document.getElementById("sellerForm");
+  const agreeBox = document.getElementById("agreeBox");
+  const paymentSection = document.getElementById("paymentSection");
+
+  sellerForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // check checkbox first
+    if (!agreeBox.checked) {
+      alert("You must agree to the instructions before continuing.");
+      return;
+    }
+
+    // show payment section
+    paymentSection.style.display = "block";
+
+    // smooth scroll
+    paymentSection.scrollIntoView({
+      behavior: "smooth"
+    });
   });
 </script>
-
 </body>
 </html>
 
