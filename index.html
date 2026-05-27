@@ -1,86 +1,172 @@
-<section class="pricing">
-  <section class="hero">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LocallyMade</title>
 
-  <h2>Welcome to LocallyMade</h2>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-  <p>
-    A marketplace where brands and independent sellers
-    connect with customers across South Africa.
-  </p>
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #000000, #1a1a1a, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+    }
 
-  <div class="hero-buttons">
+    .shine {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: move 10s infinite alternate ease-in-out;
+    }
 
-    <a href="#" class="seller-btn">
-      Become a Seller
-    </a>
+    .shine2 {
+      top: -100px;
+      left: -100px;
+    }
 
-    <a href="#" class="browse-btn">
-      Browse Products
-    </a>
+    .shine3 {
+      bottom: -100px;
+      right: -100px;
+    }
 
+    @keyframes move {
+      from {
+        transform: translateY(0px) translateX(0px);
+      }
+      to {
+        transform: translateY(40px) translateX(40px);
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 40px;
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+
+    .logo {
+      font-size: 55px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: white;
+      text-shadow: 0 0 15px rgba(255,255,255,0.5);
+      margin-bottom: 10px;
+    }
+
+    .slogan {
+      font-size: 20px;
+      color: #e0e0e0;
+      margin-bottom: 50px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 18px 35px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+      min-width: 220px;
+    }
+
+    .seller {
+      background: white;
+      color: black;
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    }
+
+    .seller:hover {
+      transform: scale(1.05);
+      background: #e6e6e6;
+    }
+
+    .browse {
+      background: black;
+      color: white;
+      border: 2px solid white;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .browse:hover {
+      transform: scale(1.05);
+      background: #1a1a1a;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        font-size: 40px;
+      }
+
+      .slogan {
+        font-size: 16px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="shine shine2"></div>
+  <div class="shine shine3"></div>
+
+  <div class="container">
+    <div class="logo">LOCALLYMADE</div>
+
+    <div class="slogan">
+      Discover South African brands. Sell local. Support local.
+    </div>
+
+    <div class="buttons">
+      <a href="seller.html" class="btn seller">Become a Seller</a>
+
+      <a href="products.html" class="btn browse">Browse Products</a>
+    </div>
+
+    <div class="footer">
+      Seller Subscription: R150 per month
+    </div>
   </div>
 
-</section>
-  
-
- 
-  <header>
-
-  <nav>
-
-    <h1>LocallyMade</h1>
-
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Sellers</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-
-  </nav>
-
-</header>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LocallyMade</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-  <p class="price">R150/month</p>
-
-  <p>
-    Sell your products on LocallyMade for a fixed monthly fee.
-  </p>
-
-  <p>
-    LocallyMade does not take a percentage from your sales.
-    What you earn is yours.
-  </p>
-<section class="signup">
-
-  <h2>Become a Seller</h2>
-
-  <p>
-    Join LocallyMade and start selling your products online.
-  </p>
-
-  <form>
-
-    <input type="text" placeholder="Business Name" required>
-
-    <input type="email" placeholder="Email Address" required>
-
-    <input type="text" placeholder="What do you sell?" required>
-
-    <button type="submit">Apply Now</button>
-
-  </form>
-
-</section>
-
-<footer>
-  <p>© 2026 LocallyMade. All rights reserved.</p>
-</footer>
-  <button>Start Selling</button>
-</section>
+</body>
+</html>
 
