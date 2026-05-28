@@ -402,5 +402,99 @@ onAuthStateChanged(auth,(user)=>{
 
 </div>
 </script>
+  <script type="module">
+
+import { initializeApp }
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getAuth,
+  onAuthStateChanged
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+  getFirestore,
+  collection,
+  addDoc
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+
+  apiKey: "PASTE API KEY",
+  authDomain: "PASTE AUTH DOMAIN",
+  projectId: "PASTE PROJECT ID",
+  storageBucket: "PASTE STORAGE BUCKET",
+  messagingSenderId: "PASTE MESSAGING ID",
+  appId: "PASTE APP ID"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const db = getFirestore(app);
+
+onAuthStateChanged(auth,(user)=>{
+
+  if(user){
+
+    console.log("Seller Logged In");
+
+  }
+
+  else{
+
+    window.location.href =
+    "login.html";
+
+  }
+
+});
+
+window.saveProduct = async function(){
+
+  let productName =
+  document.getElementById("productName").value;
+
+  let productPrice =
+  document.getElementById("productPrice").value;
+
+  let productCategory =
+  document.getElementById("productCategory").value;
+
+  let productDescription =
+  document.getElementById("productDescription").value;
+
+  try{
+
+    await addDoc(collection(db,"products"),{
+
+      name: productName,
+      price: productPrice,
+      category: productCategory,
+      description: productDescription,
+      createdAt: new Date()
+
+    });
+
+    alert("Product Saved Successfully");
+
+  }
+
+  catch(error){
+
+    alert(error.message);
+
+  }
+
+}
+
+</script>
 </body>
 </body>
