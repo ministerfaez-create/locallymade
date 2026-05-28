@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LocallyMade</title>
+  <title>LocallyMade Marketplace</title>
 
   <style>
     * {
@@ -14,158 +14,397 @@
     }
 
     body {
-      min-height: 100vh;
       background: linear-gradient(135deg, #000000, #1a1a1a, #ffffff);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
       color: white;
+      min-height: 100vh;
+      padding: 25px;
     }
 
-    .shine {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 50%;
-      filter: blur(80px);
-      animation: move 10s infinite alternate ease-in-out;
-    }
-
-    .shine2 {
-      top: -100px;
-      left: -100px;
-    }
-
-    .shine3 {
-      bottom: -100px;
-      right: -100px;
-    }
-
-    @keyframes move {
-      from {
-        transform: translateY(0px) translateX(0px);
-      }
-      to {
-        transform: translateY(40px) translateX(40px);
-      }
-    }
-
-    .container {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 40px;
-      width: 90%;
-      max-width: 800px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 25px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .logo {
-      font-size: 55px;
+      font-size: 30px;
       font-weight: bold;
-      letter-spacing: 3px;
-      color: white;
-      text-shadow: 0 0 15px rgba(255,255,255,0.5);
-      margin-bottom: 10px;
+      letter-spacing: 2px;
     }
 
-    .slogan {
-      font-size: 20px;
-      color: #e0e0e0;
-      margin-bottom: 50px;
-    }
-
-    .buttons {
+    .nav-links {
       display: flex;
-      justify-content: center;
-      gap: 25px;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
-    .btn {
-      padding: 18px 35px;
-      font-size: 18px;
-      font-weight: bold;
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 12px 18px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.15);
+      transform: scale(1.05);
+    }
+
+    .hero {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 30px;
+      padding: 50px 30px;
+      text-align: center;
+      margin-bottom: 40px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #dddddd;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .search-box {
+      max-width: 700px;
+      margin: auto;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .search-box input {
+      flex: 1;
+      min-width: 240px;
+      padding: 16px;
       border: none;
       border-radius: 50px;
-      cursor: pointer;
-      transition: 0.3s ease;
-      text-decoration: none;
-      min-width: 220px;
+      background: rgba(255,255,255,0.12);
+      color: white;
     }
 
-    .seller {
+    .search-box button {
+      padding: 16px 28px;
+      border: none;
+      border-radius: 50px;
       background: white;
       color: black;
-      box-shadow: 0 0 20px rgba(255,255,255,0.4);
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    .seller:hover {
-      transform: scale(1.05);
-      background: #e6e6e6;
+    .section {
+      margin-bottom: 55px;
     }
 
-    .browse {
-      background: black;
-      color: white;
-      border: 2px solid white;
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 20px;
     }
 
-    .browse:hover {
-      transform: scale(1.05);
-      background: #1a1a1a;
+    .section-subtitle {
+      color: #dddddd;
+      margin-bottom: 25px;
     }
 
-    .footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: #cccccc;
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
     }
 
-    @media (max-width: 600px) {
-      .logo {
-        font-size: 40px;
-      }
+    .brand-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 25px;
+      padding: 22px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
 
-      .slogan {
-        font-size: 16px;
-      }
+    .brand-card:hover {
+      transform: scale(1.03);
+    }
 
-      .btn {
-        width: 100%;
-      }
+    .brand-logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      margin-bottom: 20px;
+    }
+
+    .brand-card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .brand-card p {
+      color: #dddddd;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      background: rgba(255,255,255,0.12);
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    .visit-btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 50px;
+      background: white;
+      color: black;
+      font-weight: bold;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .category {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+
+    .category:hover {
+      transform: scale(1.03);
+    }
+
+    .promotion-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 25px;
+      padding: 35px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .promotion-box h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .promotion-box p {
+      color: #dddddd;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .promotion-box a {
+      display: inline-block;
+      text-decoration: none;
+      background: white;
+      color: black;
+      padding: 16px 28px;
+      border-radius: 50px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      color: #dddddd;
+      padding-top: 20px;
+      padding-bottom: 10px;
     }
   </style>
 </head>
 <body>
 
-  <div class="shine shine2"></div>
-  <div class="shine shine3"></div>
-
-  <div class="container">
+  <div class="navbar">
     <div class="logo">LOCALLYMADE</div>
 
-    <div class="slogan">
-      Discover South African brands. Sell local. Support local.
-    </div>
-
-    <div class="buttons">
-      <a href="seller.html" class="btn seller">Become a Seller</a>
-
-      <a href="products.html" class="btn browse">Browse Products</a>
-    </div>
-
-    <div class="footer">
-      Seller Subscription: R150 per month
+    <div class="nav-links">
+      <a href="brands.html">Brands</a>
+      <a href="seller.html">Become Seller</a>
+      <a href="seller-dashboard.html">Seller Dashboard</a>
     </div>
   </div>
+
+  <div class="hero">
+    <h1>Discover South African Brands</h1>
+
+    <p>
+      Explore participating brands, discover trending local fashion,
+      and support independent South African businesses through LocallyMade.
+    </p>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search participating brands...">
+      <button>Search</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Featured Brands</h2>
+    <p class="section-subtitle">
+      Sponsored and promoted brands with premium homepage visibility.
+    </p>
+
+    <div class="brands-grid">
+
+      <div class="brand-card">
+        <div class="brand-logo"></div>
+        <h3>Kasi Wear</h3>
+        <p>Modern township-inspired streetwear for South African youth.</p>
+
+        <div class="tags">
+          <div class="tag">Hoodies</div>
+          <div class="tag">Tees</div>
+          <div class="tag">Pants</div>
+        </div>
+
+        <a href="store.html" class="visit-btn">Visit Brand</a>
+      </div>
+
+      <div class="brand-card">
+        <div class="brand-logo"></div>
+        <h3>Urban Roots</h3>
+        <p>Premium local fashion blending urban culture and minimal design.</p>
+
+        <div class="tags">
+          <div class="tag">Hats</div>
+          <div class="tag">Jackets</div>
+          <div class="tag">Accessories</div>
+        </div>
+
+        <a href="store.html" class="visit-btn">Visit Brand</a>
+      </div>
+
+      <div class="brand-card">
+        <div class="brand-logo"></div>
+        <h3>Black Thread</h3>
+        <p>Contemporary local apparel designed for comfort and everyday wear.</p>
+
+        <div class="tags">
+          <div class="tag">Caps</div>
+          <div class="tag">Tees</div>
+          <div class="tag">Tracksuits</div>
+        </div>
+
+        <a href="store.html" class="visit-btn">Visit Brand</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Most Searched Brands</h2>
+    <p class="section-subtitle">
+      Brands currently getting the most attention from buyers.
+    </p>
+
+    <div class="brands-grid">
+
+      <div class="brand-card">
+        <div class="brand-logo"></div>
+        <h3>Local Lux</h3>
+        <p>Luxury-inspired South African lifestyle clothing and accessories.</p>
+
+        <a href="store.html" class="visit-btn">Visit Brand</a>
+      </div>
+
+      <div class="brand-card">
+        <div class="brand-logo"></div>
+        <h3>Cape Handmade</h3>
+        <p>Handcrafted products and locally designed fashion pieces.</p>
+
+        <a href="store.html" class="visit-btn">Visit Brand</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Popular Right Now</h2>
+    <p class="section-subtitle">
+      Trending brands people are loving this week.
+    </p>
+
+    <div class="brands-grid">
+
+      <div class="brand-card">
+        <div class="brand-logo"></div>
+        <h3>Native District</h3>
+        <p>Modern African streetwear and bold fashion pieces.</p>
+
+        <a href="store.html" class="visit-btn">Visit Brand</a>
+      </div>
+
+      <div class="brand-card">
+        <div class="brand-logo"></div>
+        <h3>Mzansi Motion</h3>
+        <p>Sportswear and activewear built for movement and comfort.</p>
+
+        <a href="store.html" class="visit-btn">Visit Brand</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Shop by Category</h2>
+
+    <div class="categories">
+      <div class="category">Tees</div>
+      <div class="category">Hoodies</div>
+      <div class="category">Pants</div>
+      <div class="category">Hats</div>
+      <div class="category">Accessories</div>
+      <div class="category">Shoes</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="promotion-box">
+      <h2>Promote Your Brand</h2>
+
+      <p>
+        Get featured on the LocallyMade homepage for only <b>R100</b>, appear in trending sections, and increase visibility for your products and brand.
+      </p>
+
+      <a href="seller.html">Promote Brand For R100</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 LOCALLYMADE — Supporting Local South African Brands.
+  </footer>
 
 </body>
 </html>
