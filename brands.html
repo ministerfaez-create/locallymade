@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Participating Brands - LOCALLYMADE</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    body{
+      background:linear-gradient(135deg,#000000,#1a1a1a,#ffffff);
+      color:white;
+      min-height:100vh;
+      overflow-y:auto;
+      padding:25px;
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:40px;
+      flex-wrap:wrap;
+      gap:15px;
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:bold;
+      letter-spacing:2px;
+      text-shadow:0 0 10px rgba(255,255,255,0.3);
+    }
+
+    .back-btn{
+      text-decoration:none;
+      color:white;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      padding:12px 20px;
+      border-radius:30px;
+      transition:0.3s;
+      backdrop-filter:blur(10px);
+    }
+
+    .back-btn:hover{
+      background:rgba(255,255,255,0.15);
+      transform:scale(1.05);
+    }
+
+    .hero{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:30px;
+      padding:50px 30px;
+      margin-bottom:40px;
+      text-align:center;
+      backdrop-filter:blur(10px);
+    }
+
+    .hero h1{
+      font-size:52px;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      color:#dddddd;
+      line-height:1.8;
+      max-width:700px;
+      margin:auto;
+      margin-bottom:30px;
+    }
+
+    .search-box{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .search-box input{
+      width:450px;
+      max-width:100%;
+      padding:16px;
+      border:none;
+      border-radius:50px;
+      background:rgba(255,255,255,0.12);
+      color:white;
+      outline:none;
+    }
+
+    .search-box button{
+      padding:16px 28px;
+      border:none;
+      border-radius:50px;
+      background:white;
+      color:black;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    .brands-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:22px;
+    }
+
+    .brand-card{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:25px;
+      padding:25px;
+      backdrop-filter:blur(10px);
+      transition:0.3s;
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .brand-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .brand-logo{
+      width:95px;
+      height:95px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.12);
+      margin-bottom:20px;
+    }
+
+    .brand-card h3{
+      font-size:24px;
+      margin-bottom:12px;
+    }
+
+    .brand-card p{
+      color:#dddddd;
+      line-height:1.7;
+      margin-bottom:20px;
+    }
+
+    .tag{
+      display:inline-block;
+      background:rgba(255,255,255,0.12);
+      padding:8px 14px;
+      border-radius:20px;
+      font-size:12px;
+    }
+
+    footer{
+      text-align:center;
+      color:#cccccc;
+      padding-top:50px;
+      padding-bottom:20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+
+    <div class="logo">
+      LOCALLYMADE
+    </div>
+
+    <a href="index.html" class="back-btn">
+      Back Home
+    </a>
+
+  </div>
+
+  <div class="hero">
+
+    <h1>Participating Brands</h1>
+
+    <p>
+      Browse brands currently participating on LocallyMade.
+      Search for brands and discover local South African businesses.
+    </p>
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search participating brands..."
+      >
+
+      <button onclick="searchBrands()">
+        Search
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- BRANDS GRID -->
+
+  <div class="brands-grid" id="brandsGrid">
+
+    <!-- SLOT 1 -->
+
+    <div class="brand-card brand-item">
+
+      <div class="brand-logo"></div>
+
+      <h3>Brand Slot Available</h3>
+
+      <p>
+        Waiting for subscribed seller brand.
+      </p>
+
+      <div class="tag">
+        Available
+      </div>
+
+    </div>
+
+    <!-- SLOT 2 -->
+
+    <div class="brand-card brand-item">
+
+      <div class="brand-logo"></div>
+
+      <h3>Brand Slot Available</h3>
+
+      <p>
+        Waiting for subscribed seller brand.
+      </p>
+
+      <div class="tag">
+        Available
+      </div>
+
+    </div>
+
+    <!-- SLOT 3 -->
+
+    <div class="brand-card brand-item">
+
+      <div class="brand-logo"></div>
+
+      <h3>Brand Slot Available</h3>
+
+      <p>
+        Waiting for subscribed seller brand.
+      </p>
+
+      <div class="tag">
+        Available
+      </div>
+
+    </div>
+
+    <!-- SLOT 4 -->
+
+    <div class="brand-card brand-item">
+
+      <div class="brand-logo"></div>
+
+      <h3>Brand Slot Available</h3>
+
+      <p>
+        Waiting for subscribed seller brand.
+      </p>
+
+      <div class="tag">
+        Available
+      </div>
+
+    </div>
+
+    <!-- SLOT 5 -->
+
+    <div class="brand-card brand-item">
+
+      <div class="brand-logo"></div>
+
+      <h3>Brand Slot Available</h3>
+
+      <p>
+        Waiting for subscribed seller brand.
+      </p>
+
+      <div class="tag">
+        Available
+      </div>
+
+    </div>
+
+    <!-- SLOT 6 -->
+
+    <div class="brand-card brand-item">
+
+      <div class="brand-logo"></div>
+
+      <h3>Brand Slot Available</h3>
+
+      <p>
+        Waiting for subscribed seller brand.
+      </p>
+
+      <div class="tag">
+        Available
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 LOCALLYMADE — Supporting Local South African Brands.
+  </footer>
+
+  <script>
+
+    function searchBrands(){
+
+      let input =
+      document.getElementById("searchInput")
+      .value
+      .toLowerCase();
+
+      let brands =
+      document.querySelectorAll(".brand-item");
+
+      brands.forEach(function(brand){
+
+        let name =
+        brand.querySelector("h3")
+        .innerText
+        .toLowerCase();
+
+        if(name.includes(input)){
+          brand.style.display = "block";
+        }
+
+        else{
+          brand.style.display = "none";
+        }
+
+      });
+
+    }
+
+  </script>
+
+</body>
+</html>
